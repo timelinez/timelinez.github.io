@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Timeline</title>
+
+    <style>
+
+.base {
+   border-radius: 25px;
+   background: #73AD21;
+   padding:25px;
+   display: inline-block;
+   text-align: left;
+	box-shadow: 2px 7px 7px 3px #BBB;
+   }
+
+.dataentry {
+   background: #dbf0b8;
+   padding : 5px;
+   cursor: pointer;
+   font-family: helvetica,arial;
+   font-size:0.9em;
+   border-radius: 6px;
+   border: 1px solid #73AD21;
+   position: absolute;
+   width: 300px;
+   }
+
+
+.data-area {
+   display:table-cell;
+   border-radius: 25px;
+   border: 5px;
+   height: auto;
+   min-width:450px;
+   width:600px;
+   }
+
+.time-line {
+   display:table-cell;
+   position:relative;
+   width:40px;
+   height:100%;
+   left:0px;
+}
+
+#popup {
+	display: block;
+	cursor:hand;
+	position:absolute;
+	opacity: 1e-6;
+   margin:20px;
+   padding:10px;
+	box-shadow: 2px 7px 7px 3px #BBB;
+   width:350px;
+	background-color: #eee;
+	border-radius:10px;
+	text-align:center;
+	font-size:14px;
+   min-height:18px;
+	font-family: helvetica,arial;
+   pointer-events: none;
+}
+
+.main-div {
+   text-align: center;
+	min-width: 600px;
+}
+
+.axis {
+   stroke-width: 1;
+   stroke: #333;
+   }
+
+
+.axis line, .axis path{
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  stroke: #333;
+}
+
+.axis .domain {
+   stroke-width: 3;
+   marker-end: url(#end-arrow);
+   }
+
+.tick {
+   stroke-width: 2;
+   }
+
+.tick text{
+  text-anchor: middle;
+  stroke-width: 0;
+ font-family: helvetica,arial;
+}
+
+.arrow {
+   stroke-width: 5;
+   stroke: #dbf0b8;
+   marker-end: url(#end-arrow);
+}
+
+.ticks {
+   stroke-width: 3;
+   stroke: #dbf0b8;
+  }
+
+svg {
+   position: absolute;
+}
+
+
+</style>
+
+    <script src="d3.v4.min.js"></script>
+
+<script>
+
+ class timeline {
+
+      constructor( data ) {
+
+         this.height = 20000;
+         this.width = 700;
+
+         this.init();
+         this.initData( data );
+      }
+
+
+      initData(data) {
+         const strings = data.split(/\n+/);
+         let index = 0;
+         this.timedata = strings.map( d => {
+               let text = d.substr(13),
+                  date =  new Date(d.substr(0,10)),
+                  shorttext = text.match(/^(.{8}.+?(?:[a-zA-Z0-9"]{4}\.)|.+)/); // min 8 symbols text and attempt to not count short words like Mr. or Mrs as ends of sentences
+
+               return {
+                  date: date,
+                  cdate : d3.timeFormat("%Y-%m-%d")(date),
+                  text: text,
+                  shorttext : shorttext ? shorttext[0] : text,
+                  id: index++
+               };
+         }).filter( d =>  d.date && d.text )
+
+      }
+
+      init() {
+
+         this.base = d3.select('.data-area')
+
+         this.svg = d3.select('body')
+               .append('svg')
+               .style('left',   (this.base.node().getBoundingClientRect().left -70) + 'px')
+               .style('top',   this.base.node().getBoundingClientRect().top + 'px')
+               .style('width',   77 + 'px')
+
+         this.svg.append('svg:defs')
+            .append('svg:marker')
+            .attr('id', 'end-arrow')
+            .attr('viewBox', '0 -5 10 10')
+            .attr('refX', 2)
+           // .attr('refY', 5)
+            .attr('markerWidth', 4)
+            .attr('markerHeight', 4)
+            .attr('orient', 'auto')
+            .append('svg:path')
+            .attr("transform", "rotate(-90)")
+               //.attr('d', 'M0,-5L10,0L0,5')
+               .attr('d', 'M 0,0 m -5,-5 L 5,0 L -5,5 Z')
+               .attr('fill', '#000')
+               .attr('stroke', '#000');
+      }
+
+      render ( ) {
+
+         let that = this,
+            domain = d3.extent( this.timedata.map( d => d.date) ),
+            x = this.base.node().getBoundingClientRect().left + 8,
+            y = d3.scaleTime()
+                  .range([ 0, this.height-30])
+                  .domain( domain )
+                  .nice( d3.timeDay),
+            height = y(domain[1]) + 20,
+            width = this.base.node().getBoundingClientRect().width - 14;
+
+         this.base.style('height', (height+20) + 'px');
+         this.svg.style('height',   (height+10) + 'px')
+
+         this.base.selectAll(".dataentry").data(this.timedata, d => d.id)
+            .enter()
+            .append('div')
+               .classed('dataentry', true)
+               .style('top', d => (30 + y(d.date)) + 'px')
+               .style('left', x + 'px')
+               .style('width', width + 'px')
+               .html( d => d.cdate + ' -- ' + d.shorttext )
+               .on("mouseover", d => {
+                        d3.select('#popup')
+                           .html( d.cdate + ': ' + d.text )
+                           .transition()
+                           .duration(250)
+                           .style('opacity',1)
+                           .style("left", (d3.event.pageX + 10) + "px")
+                           .style("top", (d3.event.pageY - 28) + "px")
+                  })
+               .on("mouseout", () => {
+                        d3.select('#popup').transition().duration(250).style('opacity',0);
+                  })
+
+         this.svg.append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(" + [65,5] + ")")
+            .call(
+               d3.axisLeft(y)
+               .ticks( d3.timeDay.filter( d => d < domain[0]  || d3.timeDay.count(0, d) % 10 === 0  ) )
+               .tickPadding(30)
+               .tickSizeOuter(0)
+               .tickFormat(d3.timeFormat("%Y-%m-%d")))
+
+      }
+
+  }
+</script>
+
+
+</head>
+
+<body>
+
+   <div class="main-div">
+      <div class="base">
+         <div class="time-line"></div>
+         <div class="data-area"></div>
+      </div>
+   </div>
+   <div id="popup"></div>
+
+</body>
+
+
+<script>
+
+ d3.text("data.txt", function(error, root) {
+      if (error) alert('Unable to load data file');
+      else {
+         const t = new timeline(root);
+         t.render();
+      }
+  })
+
+    </script>
+  </body>
+</html>
