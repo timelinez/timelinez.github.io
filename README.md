@@ -7,3 +7,4 @@
 5. Hive off "full text" to separate markdown page. This is the hover over function.
 6. Add other navigation features.
 7. Show local rendering of date and time - e.g. 25th December 2018 2:05PM 
+8. Show similar date/time entries from smushing into eah other
