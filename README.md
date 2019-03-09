@@ -1,8 +1,19 @@
 # What is this?
 
-A JavaScript tech that uses D3 to make a timeline from a simple text file.
+A JavaScript tech that uses D3 to make a timeline from a simple text file.  The timeline code is hosted on 
+this repo - https://github.com/timelinez/timelinez.github.io/ - and served by by the good people at Github 
+on https://timelinez.github.io/ and plucks a Github organization (or user) out of the anchor to pull a 
+similarly served timeline out for presentation. Here's the reference one on JFK's presidency: 
+[http://timelinez.github.io#timelinez/jfk](http://timelinez.github.io#timelinez/jfk).
 
-# Features yet to add:
+# Making your own timeline
+
+You're interested in hosting your own timeline, in which case take a look at 
+[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar. Editing 
+your timeline can be done through Github's web interface. You can process your own contributions using 
+GitHub's Pull-Request system.
+
+# Features yet to add (contributions welcome)
 
 1. InfiniScroll
 1. Zoom in / zoom out
