@@ -259,7 +259,12 @@
     d3.text("https://" + orgUser + ".github.io/" + repo+ "/timeline.txt").then(function(root) {
         const t = new timeline(root);
         t.render();
+        d3.select('body')
+            .append('p')
+            .html("The timeline being shown above has entries listed in <a href=\"https://github.com/" + orgUser + "/" + repo+ "/timeline.txt\">here</a>");
     });
+
+
 
 </script>
 </body>
