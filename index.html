@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
 
+    <!-- Timelinez.github.io - Copyright 2019 Paul Hammant, licensed under the modified BSD license -->
+
     <title>Timelinez</title>
 
     <style>
@@ -115,7 +117,7 @@
 
     </style>
 
-    <script src="d3.v4.min.js"></script>
+    <script src="d3.min.js"></script>
 
     <script>
 
@@ -152,13 +154,13 @@
 
             init() {
 
-                this.base = d3.select('.data-area')
+                this.base = d3.select('.data-area');
 
                 this.svg = d3.select('body')
                     .append('svg')
                     .style('left', (this.base.node().getBoundingClientRect().left - 70) + 'px')
                     .style('top', this.base.node().getBoundingClientRect().top + 'px')
-                    .style('width', 77 + 'px')
+                    .style('width', 77 + 'px');
 
                 this.svg.append('svg:defs')
                     .append('svg:marker')
@@ -211,7 +213,7 @@
                     })
                     .on("mouseout", () => {
                         d3.select('#popup').transition().duration(250).style('opacity', 0);
-                    })
+                    });
 
                 this.svg.append("g")
                     .attr("class", "y axis")
@@ -249,13 +251,10 @@
 
 <script>
 
-    d3.text("data.txt", function (error, root) {
-        if (error) alert('Unable to load data file');
-        else {
-            const t = new timeline(root);
-            t.render();
-        }
-    })
+    d3.text("data.txt").then(function(root) {
+        const t = new timeline(root);
+        t.render();
+    });
 
 </script>
 </body>
