@@ -251,8 +251,12 @@
 
 <script>
 
-    // d3.text("timeline.txt").then(function(root) {
-    d3.text("https://timelinez.github.io/jfk/timeline.txt").then(function(root) {
+    let parts = location.hash.split("/");
+    orgUser = parts[0].replace("#","");
+    repo = parts[1];
+
+    // d3.text("timeline.txt").then(function(root) { // reference JFK timeline
+    d3.text("https://" + orgUser + ".github.io/" + repo+ "/timeline.txt").then(function(root) {
         const t = new timeline(root);
         t.render();
     });
