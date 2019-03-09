@@ -251,7 +251,8 @@
 
 <script>
 
-    d3.text("timeline.txt").then(function(root) {
+    // d3.text("timeline.txt").then(function(root) {
+    d3.text("https://timelinez.github.io/jfk/timeline.txt").then(function(root) {
         const t = new timeline(root);
         t.render();
     });
