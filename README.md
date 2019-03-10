@@ -15,7 +15,9 @@ Here's an excerpt:
 
 # Why the Github-backed aspect to this?
 
-Because Git is a nearly perfect history retaining merkle tree. Changes made to a timeline should be inspectable 
+## Because Git is a nearly perfect history retaining merkle tree. 
+
+Changes made to a timeline should be inspectable 
 by all and Git's history as presented by GitHub make that easy and polished. Not only that, timelines could receive
 contributions from anyone, including anonymous people, and subject to approval those contributions become accepted.
 Changes to a timeline (as anything held in Git) can't be modified after the event without that being evident in 
@@ -44,6 +46,11 @@ The Git feature "force push" is how history can be destroyed, so turn that OFF i
 (protect the master branch). Also don't check in PDFs as Google has proven SHA1 is not safe for PDFs if someone has 
 sufficient funds to spend on computing power to make a second PDF have the same SHA1 of the first.
 
+## Because you trust Github (Microsoft)
+
+1. To not tamper with the Git history themselves
+2. To not mis-represent anything during the serving and navigation of the timeline, despite some source being "open" (this repo)
+
 # Making your own timeline
 
 You're interested in hosting your own timeline, in which case take a look at 
@@ -59,7 +66,7 @@ GitHub's Pull-Request system.
 1. Markdown Links - both "Drill in" to another timeline, and to regular pages (see JDK death)
 1. Live bookmarkable URL - as you move up and down the timeline, the URL changes to allow you to send that to someone else and they get to the same page.
 1. Make sure that time line renders well in narrower page widths
-1. Add other navigation features.
+1. Show SHA1 at time of serving, in case the pa
 1. Show local rendering of date and time - e.g. 25th December 2018 2:05PM 
 1. Show similar date/time entries from smushing into each other
 1. InfiniScroll
