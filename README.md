@@ -38,7 +38,7 @@ As long as someone else has noted the SHA1 hash of the whole repo at a moment in
 fact that this timeline exists and has not been tampered with. Entries may of course be rewritten, revised or 
 tweaked, but as long as the SHA1 is still in the history then it can be claimed that tampering did not happen. To be 
 clear tampering is defined here as history being changed in a way there "no I/we did not say that" can't happen when 
-the Git history say that it did. Say you messed up and implicated Philipp Oswald (born 1986, Austrian tennis player) 
+the Git history say that it did. Say you messed up and implicated Philipp Oswald [↗](https://en.wikipedia.org/wiki/Philipp_Oswald) (born 1986, Austrian tennis player) 
 as he who shot JFK (shooter #1, for your purposes), but realize six months later that you'd made a mistake and it as 
 in fact Lee Harvey Oswald. There may have been dozens of other legitimate changes to the timeline before this mistake 
 was noted, so you should simply make the change to the latest version of the timeline and not the correction in the 
@@ -50,7 +50,7 @@ sufficient funds to spend on computing power to make a second PDF have the same 
 
 ## Because you trust Github (Microsoft)
 
-1. To not tamper with the Git history themselves
+1. To not tamper with the Git history itself
 2. To not mis-represent anything during the serving and navigation of the timeline, despite some source being "open" (this repo)
 
 # Making your own timeline
