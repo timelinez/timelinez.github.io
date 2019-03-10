@@ -252,18 +252,28 @@
 <script>
 
     let parts = location.hash.split("/");
-    orgUser = parts[0].replace("#","");
-    repo = parts[1];
 
-    // d3.text("timeline.txt").then(function(root) { // reference JFK timeline
-    d3.text("https://" + orgUser + ".github.io/" + repo+ "/timeline.txt").then(function(root) {
+    if (parts.length < 2) {
+        d3.text("reference.txt").then(doLine);
+    } else {
+        orgUser = parts[0].replace("#","");
+        repo = parts[1];
+        if (parts.length < 3) {
+            file = "timeline"
+        } else {
+            file = parts[3];
+        }
+        d3.text("https://" + orgUser + ".github.io/" + repo+ "/" + file + ".txt").then(doLine);
+    }
+
+
+    function doLine(root) {
         const t = new timeline(root);
         t.render();
         d3.select('#footer')
             .append('p')
-            .html("The timeline being shown above has entries listed in this file <a href=\"https://github.com/" + orgUser + "/" + repo+ "/blob/master/timeline.txt\">https://github.com/" + orgUser + "/" + repo+ "/blob/master/timeline.txt</a>, which you may contribute to");
-    });
-
+            .html("The timeline being shown above has entries listed in this file <a href=\"https://github.com/" + orgUser + "/" + repo + "/blob/master/timeline.txt\">https://github.com/" + orgUser + "/" + repo + "/blob/master/timeline.txt</a>, which you may contribute to");
+    }
 
 
 </script>
