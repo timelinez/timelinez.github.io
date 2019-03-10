@@ -15,7 +15,7 @@ Here's an excerpt:
 
 # Why the Github-backed aspect to this?
 
-## Because Git is a nearly perfect history retaining merkle tree. 
+## Because Git is a nearly perfect history-retaining merkle tree. 
 
 Changes made to a timeline should be inspectable 
 by all and Git's history as presented by GitHub make that easy and polished. Not only that, timelines could receive
