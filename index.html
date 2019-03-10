@@ -243,7 +243,7 @@
 </div>
 <div id="popup"></div>
 
-<center id="footer"><p>The Timelinez.GitHub.io technology is maintained at <a href="https://github.com/timelinez/timelinez.github.io">https://github.com/timelinez/timelinez.github.io</a>
+<center id="footer"><p>The Timelinez.GitHub.io technology is maintained at <a href="https://github.com/timelinez/timelinez.github.io">https://github.com/timelinez/timelinez.github.io</a><br/>
     and contributions are welcome.</p></center>
 
 </body>
@@ -254,6 +254,9 @@
     let parts = location.hash.split("/");
 
     if (parts.length < 2) {
+        orgUser = "timelinez";
+        repo = "timelinez.github.io";
+        file = "reference";
         d3.text("reference.txt").then(doLine);
     } else {
         orgUser = parts[0].replace("#","");
@@ -266,15 +269,13 @@
         d3.text("https://" + orgUser + ".github.io/" + repo+ "/" + file + ".txt").then(doLine);
     }
 
-
     function doLine(root) {
         const t = new timeline(root);
         t.render();
         d3.select('#footer')
             .append('p')
-            .html("The timeline being shown above has entries listed in this file <a href=\"https://github.com/" + orgUser + "/" + repo + "/blob/master/timeline.txt\">https://github.com/" + orgUser + "/" + repo + "/blob/master/timeline.txt</a>, which you may contribute to");
+            .html("The timeline being shown above has entries listed in this file: <a href=\"https://github.com/" + orgUser + "/" + repo + "/blob/master/" + file + ".txt\">https://github.com/" + orgUser + "/" + repo + "/blob/master/" + file + ".txt</a><br/>You should be able to contribute changes there.");
     }
-
 
 </script>
 </body>

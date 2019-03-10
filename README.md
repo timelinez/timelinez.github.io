@@ -17,9 +17,9 @@ GitHub's Pull-Request system.
 
 1. Markdown Links - both "Drill in" to another timeline, and to regular pages (see JDK death)
 1. Live bookmarkable URL - as you move up and down the timeline, the URL changes to allow you to send that to someone else and they get to the same page.
-1. Hive off "full text" to separate markdown page. This is the hover over function.
+1. Make sure that time line renders well in narrower page widths
 1. Add other navigation features.
 1. Show local rendering of date and time - e.g. 25th December 2018 2:05PM 
-1. Show similar date/time entries from smushing into eah other
+1. Show similar date/time entries from smushing into each other
 1. InfiniScroll
 1. Zoom in / zoom out
