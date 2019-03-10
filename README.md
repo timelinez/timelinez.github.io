@@ -5,8 +5,7 @@ this (https://github.com/timelinez/timelinez.github.io/) repository and served b
 on https://timelinez.github.io/. It plucks a Github organization (or user) and repo-name out of the anchor of the URL (the bit to the right ot the '#') to extract data for a visual timeline. 
 
 Here's a reference timeline on JFK's presidency: 
-[http://timelinez.github.io#timelinez/jfk](http://timelinez.github.io#timelinez/jfk). And the source for that 
-timeline is here in nearly plain text: [https://github.com/timelinez/jfk/blob/master/timeline.txt](https://github.com/timelinez/jfk/blob/master/timeline.txt).
+[http://timelinez.github.io#timelinez/jfk](http://timelinez.github.io#timelinez/jfk) (shown visually with this technology). The source for that is here: [https://github.com/timelinez/jfk/blob/master/timeline.txt](https://github.com/timelinez/jfk/blob/master/timeline.txt) (very nearly plain text).
 
 Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io) and [source for that](http://github.com/timelinez/timelinez.github.io/blob/master/reference.txt).
 
