@@ -8,7 +8,7 @@ Here's a reference timeline on JFK's presidency:
 [http://timelinez.github.io#timelinez/jfk](http://timelinez.github.io#timelinez/jfk). And the source for that 
 timeline is here in nearly plain text: [https://github.com/timelinez/jfk/blob/master/timeline.txt](https://github.com/timelinez/jfk/blob/master/timeline.txt).
 
-Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io#timelinez/timelinez.github.io/reference) and [source for that](http://github.io/timelinez/timelinez.github.io/blob/master/reference.txt).
+Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io) and [source for that](http://github.com/timelinez/timelinez.github.io/blob/master/reference.txt).
 
 Here's a source excerpt for the JFK timeline:
 
