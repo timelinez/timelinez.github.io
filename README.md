@@ -68,8 +68,8 @@ If you're interested in making your own timelines, take a look at
 use "fork" for that as you're not going to keep abreast of the small amount of JFK data - your's will not just be wholly divergent, it won't have 
 any common history at all.
 
-Fork this repo too and maintain divergence with it. It should be forked into a "&lt;orgOrUserName&gt;.github.io" repo name, so that technology 
-around the same origin policy works.
+Fork this repo too and maintain divergence with it. It should be forked into a `&lt;orgOrUserName&gt;.github.io` repo name, so that technology 
+around the same origin policy (see "snafus" below) works.
 
 Editing your timeline can be done through GitHub's web interface. You can process your own contributions using 
 GitHub's Pull-Request system. Remember that you can have more than one .txt timeline in the same repo, and each will have a strong URL of its own.
