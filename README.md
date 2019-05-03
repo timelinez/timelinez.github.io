@@ -1,16 +1,23 @@
 # What is this?
 
-A JavaScript tech that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is maintained in 
-this (https://github.com/timelinez/timelinez.github.io/) repository on Github, who serve it up over HTTP  
-on https://timelinez.github.io/. It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (the bit to the right ot the '#') to extract data for a visual timeline. 
+A JavaScript technology that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is maintained in 
+this repository ([github.com/timelinez/timelinez.github.io/](https://github.com/timelinez/timelinez.github.io/)) on Github who kindly serve it up for web access  
+on https://timelinez.github.io/. It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (if present - the bit to the right ot the '#') to extract data for a visual timeline. 
 
-Here's a reference timeline on JFK's presidency: 
-[http://timelinez.github.io#jfk](http://timelinez.github.io#timelinez/jfk) (shown visually with this technology). The source for that is in this repo: [https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and the main timeline file is [https://github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) which very nearly plain text.  That repo is a 
-sibling one inside the `timelinez` "organization", but in reality separate organizations would exist for various groups.
+Here's a reference timeline on JFK's presidency (sibling repo to this one): 
 
-Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io) and [source for that](http://github.com/timelinez/timelinez.github.io/blob/master/main.txt).
+* As you you would view it: [timelinez.github.io#jfk](https://timelinez.github.io#timelinez/jfk) (using this technology). 
+* The source for that is in this repo: [github.com/timelinez/jfk](https://github.com/timelinez/jfk) 
+* The main timeline file in that repo is [github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt).  
 
-Here's a source excerpt for the JFK timeline:
+As mentioned, that repo is a sibling one inside the `timelinez` "organization". The intention is for multiple separate organizations to exist for various groups/agendas.
+
+One built in to this repo is on Sun/Oracle's patronage of Java (the programming language): 
+
+* Timeline visual: [timelinez.github.io](https://timelinez.github.io) 
+* Source for that: [github.com/timelinez/timelinez.github.io/blob/master/main.txt](http://github.com/timelinez/timelinez.github.io/blob/master/main.txt).
+
+Here's an excerpt from the source for the JFK timeline:
 
 ```
 1963-11-22 – President Kennedy and Texas Governor John Connally are shot in Dallas, with President Kennedy dying from his injuries.
@@ -61,7 +68,7 @@ If you're interested in making your own timelines, take a look at
 use for for that as you're not going to keep abreast of the small amount of JFK data - your's will not just be wholly divergent, it won't have 
 any common history.
 
-Fork this repo too and maintain divergence with it. It should be forked into a "<orgOrUserName>.github.io" repo name, so that technology 
+Fork this repo too and maintain divergence with it. It should be forked into a "&lt;orgOrUserName&gt;.github.io" repo name, so that technology 
 around the same origin policy works.
 
 Editing your timeline can be done through Github's web interface. You can process your own contributions using 
@@ -70,7 +77,7 @@ GitHub's Pull-Request system. Remember that you can have more than one .txt time
 # Features yet to add (contributions welcome)
 
 1. Links to - other pages (should be markdown style)
-1. "Drill in" to other/adjacent timelines (see JDK death)
+1. "Drill in" to other/adjacent timelines (like "see JFK death")
 1. Allow the overlay of HTML version of markdown source named in a link
 1. Markdown Links - both "Drill in" to another timeline, and to regular pages, like "see JDK death ↗"
 1. Live bookmarkable URL - as you move up and down the timeline, the URL changes to allow you to send that to someone else and they get to the same page.
