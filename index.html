@@ -264,7 +264,7 @@
         repo = window.location.hostname
         resource = "/index";
         d3.text(resource + ".txt").then(doLine);
-    if (parts.length == 1) {
+    } else if (parts.length == 1) {
         repo = window.location.hostname
         resource = parts[0];
         d3.text("/" + resource + ".txt").then(doLine);
