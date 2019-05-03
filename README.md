@@ -1,8 +1,8 @@
 # What is this?
 
-A JavaScript tech that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is hosted in 
-this (https://github.com/timelinez/timelinez.github.io/) repository and served by by the good people at Github 
-on https://timelinez.github.io/. It plucks a Github organization (or user) and repo-name out of the anchor of the URL (the bit to the right ot the '#') to extract data for a visual timeline. 
+A JavaScript tech that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is maintained in 
+this (https://github.com/timelinez/timelinez.github.io/) repository on Github, who serve it up over HTTP  
+on https://timelinez.github.io/. It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (the bit to the right ot the '#') to extract data for a visual timeline. 
 
 Here's a reference timeline on JFK's presidency: 
 [http://timelinez.github.io#timelinez/jfk](http://timelinez.github.io#timelinez/jfk) (shown visually with this technology). The source for that is here: [https://github.com/timelinez/jfk/blob/master/timeline.txt](https://github.com/timelinez/jfk/blob/master/timeline.txt) (very nearly plain text).
@@ -15,7 +15,7 @@ Here's a source excerpt for the JFK timeline:
 1963-11-22 – President Kennedy and Texas Governor John Connally are shot in Dallas, with President Kennedy dying from his injuries.
 ```
 
-# Why the Github-backed aspect to this?
+# What is the reason for the Github-backed aspect to this?
 
 ## Because Git is a nearly perfect history-retaining merkle tree. 
 
@@ -34,18 +34,18 @@ a "second shooter" on the grassy knoll in downtown Dallas. You could maintain yo
 1963-11-22T12:36 – Second shooter catches bus to Plano, TX
 ```
 
-As long as someone else has noted the SHA1 hash of the whole repo at a moment in time, then there's a witness to the 
+As long as someone else (or some other org) has noted the SHA1 hash of the whole repo at a moment in time, then there's a witness to the 
 fact that this timeline exists and has not been tampered with. Entries may of course be rewritten, revised or 
 tweaked, but as long as the SHA1 is still in the history then it can be claimed that tampering did not happen. To be 
 clear tampering is defined here as history being changed in a way there "no I/we did not say that" can't happen when 
 the Git history say that it did. Say you messed up and implicated Philipp Oswald [[↗]](https://en.wikipedia.org/wiki/Philipp_Oswald) (born 1986, Austrian tennis player) 
 as he who shot JFK (shooter #1, for your purposes), but realize six months later that you'd made a mistake and it as 
-in fact Lee Harvey Oswald. There may have been dozens of other legitimate changes to the timeline before this mistake 
+in fact Lee Harvey Oswald [[↗]](https://en.wikipedia.org/wiki/Lee_Harvey_Oswald). There may have been dozens of other legitimate changes to the timeline before this mistake 
 was noted, so you should simply make the change to the latest version of the timeline and not the correction in the 
 commit message, making it non-controversial. This would be similar to retractions in newspapers.
 
-The Git feature "force push" is how history can be destroyed, so turn that OFF in the Github project definition 
-(protect the master branch). Also don't check in PDFs as Google has proven SHA1 is not safe for PDFs if someone has 
+The Git feature "force push" is how history can be destroyed, so turn that OFF in the Github (or GitLab) project definition 
+(protect the master branch). Also don't check in PDFs as researchers have proven SHA1 is not safe for PDFs [[↗]](http://shattered.io/) if someone has 
 sufficient funds to spend on computing power to make a second PDF have the same SHA1 of the first.
 
 ## Because you trust Github (Microsoft)
@@ -56,7 +56,7 @@ sufficient funds to spend on computing power to make a second PDF have the same 
 # Making your own timeline
 
 You're interested in hosting your own timeline, in which case take a look at 
-[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar. Editing 
+[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar (fork the repo, and maintain divergence). Editing 
 your timeline can be done through Github's web interface. You can process your own contributions using 
 GitHub's Pull-Request system.
 
@@ -73,3 +73,8 @@ GitHub's Pull-Request system.
 1. Show similar date/time entries from smushing into each other
 1. InfiniScroll
 1. Zoom in / zoom out
+
+# Small snafus
+
+1. PDFs in the repo being subject to shenanigans - ref https://shattered.io - you can't even put their SHA1s in the Git repo and keep the binary without someone claiming the possibility of fakery.
+2. The Web's Same Origin Policy [[↗]](https://en.wikipedia.org/wiki/Same-origin_policy) means that you have to fork this repo, including the JavaScript code rather than to referto the HTTP hosted JavaScript/CSS. You then have to keep abreast by pulling changes from "upstream" as you also maintain divergence.
