@@ -2,13 +2,13 @@
 
 A JavaScript technology that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is maintained in 
 this repository ([github.com/timelinez/timelinez.github.io/](https://github.com/timelinez/timelinez.github.io/)) on Github who kindly serve it up for web access  
-on https://timelinez.github.io/. It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (if present - the bit to the right ot the '#') to extract data for a visual timeline. 
+on [timelinez.github.io](https://timelinez.github.io). It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (if present - the bit to the right ot the '#') to extract data for a visual timeline. 
 
 Here's a reference timeline on JFK's presidency (sibling repo to this one): 
 
 * As you you would view it: [timelinez.github.io#jfk](https://timelinez.github.io#timelinez/jfk) (using this technology). 
 * The source for that is in this repo: [github.com/timelinez/jfk](https://github.com/timelinez/jfk) 
-* The main timeline file in that repo is [github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt).  
+* The main timeline file in that repo is [github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) (editable in situ).
 
 As mentioned, that repo is a sibling one inside the `timelinez` "organization". The intention is for multiple separate organizations to exist for various groups/agendas.
 
