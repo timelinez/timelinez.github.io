@@ -252,32 +252,33 @@
 
 <script>
 
+    // https://orgUser.github.io - should load 'index.txt' on the same domain
+    // https://orgUser.github.io#resource - should load '<resource>.txt' on the same domain
+    // https://orgUser.github.io#repoName/resource - should load '<resource>.txt' from the <repoName> root directory on the same domain
+
     let parts = location.hash.split("/");
 	
 	let orgUser = window.location.hostname.split(".")[0]
 
-    if (parts.length < 2) {
-        orgUser = "timelinez";
-        repo = "timelinez.github.io";
-        file = "reference";
-        d3.text("reference.txt").then(doLine);
+    if (parts.length < 1) {
+        repo = window.location.hostname
+        resource = "/index";
+        d3.text(resource + ".txt").then(doLine);
+    if (parts.length == 1) {
+        repo = window.location.hostname
+        resource = parts[0];
+        d3.text("/" + resource + ".txt").then(doLine);
     } else {
-        orgUser = parts[0].replace("#","");
-        repo = parts[1];
-        if (parts.length < 3) {
-            file = "timeline"
-        } else {
-            file = parts[3];
-        }
-        d3.text("https://" + orgUser + ".github.io/" + repo+ "/" + file + ".txt").then(doLine);
+        repo = parts[0].replace("#","");
+        resource = parts[1];
+        d3.text("/" + repo + "/" + resource + ".txt").then(doLine);
     }
-
     function doLine(root) {
         const t = new timeline(root);
         t.render();
         d3.select('#footer')
             .append('p')
-            .html("The <b>actual timeline</b> being shown above has entries listed in this file: <a href=\"https://github.com/" + orgUser + "/" + repo + "/blob/master/" + file + ".txt\">https://github.com/" + orgUser + "/" + repo + "/blob/master/" + file + ".txt</a><br/>You should be able to contribute changes there.");
+            .html("The <b>actual timeline</b> being shown above has entries listed in this file: <a href=\"https://github.com/" + orgUser + "/" + repo + "/blob/master/" + resource + ".txt\">https://github.com/" + orgUser + "/" + repo + "/blob/master/" + resource + ".txt</a><br/>You should be able to contribute changes there.");
     }
 
 </script>
