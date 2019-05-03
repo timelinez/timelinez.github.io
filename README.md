@@ -56,10 +56,16 @@ sufficient funds to spend on computing power to make a second PDF have the same 
 
 # Making your own timeline
 
-You're interested in hosting your own timeline, in which case take a look at 
-[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar (fork the repo, and maintain divergence). Editing 
-your timeline can be done through Github's web interface. You can process your own contributions using 
-GitHub's Pull-Request system.
+If you're interested in making your own timelines, take a look at 
+[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar in a new repo for your GitHub org or user. Don't 
+use for for that as you're not going to keep abreast of the small amount of JFK data - your's will not just be wholly divergent, it won't have 
+any common history.
+
+Fork this repo too and maintain divergence with it. It should be forked into a "<orgOrUserName>.github.io" repo name, so that technology 
+around the same origin policy works.
+
+Editing your timeline can be done through Github's web interface. You can process your own contributions using 
+GitHub's Pull-Request system. Remember that you can have more than one .txt timeline in the same repo, and each will have a strong URL of its own.
 
 # Features yet to add (contributions welcome)
 
