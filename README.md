@@ -5,9 +5,10 @@ this (https://github.com/timelinez/timelinez.github.io/) repository on Github, w
 on https://timelinez.github.io/. It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (the bit to the right ot the '#') to extract data for a visual timeline. 
 
 Here's a reference timeline on JFK's presidency: 
-[http://timelinez.github.io#jfk](http://timelinez.github.io#timelinez/jfk) (shown visually with this technology). The source for that is here: [https://github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) (very nearly plain text).
+[http://timelinez.github.io#jfk](http://timelinez.github.io#timelinez/jfk) (shown visually with this technology). The source for that is in this repo: [https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and the main timeline file is [https://github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) which very nearly plain text.  That repo is a 
+sibling one inside the `timelinez` "organization", but in reality separate organizations would exist for various groups.
 
-Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io) and [source for that](http://github.com/timelinez/timelinez.github.io/blob/master/reference.txt).
+Here's another on Sun/Oracle's patronage of Java (the programming language): [timeline visual](http://timelinez.github.io) and [source for that](http://github.com/timelinez/timelinez.github.io/blob/master/main.txt).
 
 Here's a source excerpt for the JFK timeline:
 
@@ -78,4 +79,4 @@ GitHub's Pull-Request system.
 # Small snafus
 
 1. PDFs in the repo being subject to shenanigans - ref https://shattered.io - you can't even put their SHA1s in the Git repo and keep the binary without someone claiming the possibility of fakery.
-2. The Web's Same Origin Policy [[↗]](https://en.wikipedia.org/wiki/Same-origin_policy) means that you have to fork this repo, including the JavaScript code rather than to referto the HTTP hosted JavaScript/CSS. You then have to keep abreast by pulling changes from "upstream" as you also maintain divergence.
+2. The Web's "Same Origin Policy" [[↗]](https://en.wikipedia.org/wiki/Same-origin_policy) means that you have to fork this repo, including the JavaScript code rather than to referto the HTTP hosted JavaScript/CSS. You then have to keep abreast by pulling changes from "upstream" as you also maintain divergence.
