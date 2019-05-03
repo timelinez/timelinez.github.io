@@ -271,7 +271,8 @@
         resource = parts[1];
         d3.text("/" + repo + "/" + resource + ".txt").then(doLine);
     }
-	
+
+	console.log("parts.length='" + parts.length + "'");
 	console.log("orgUser='" + orgUser + "'");
 	console.log("repo='" + repo + "'");
 	console.log("resource='" + resource + "'");
