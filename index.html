@@ -258,14 +258,14 @@
 
     let parts = location.hash.split("/");
 	
-	let orgUser = window.location.hostname.split(".")[0]
+	let orgUser = window.location.hostname.split(".")[0];
 
     if (parts.length < 1) {
-        repo = window.location.hostname
+        repo = window.location.hostname;
         resource = "/index";
         d3.text(resource + ".txt").then(doLine);
     } else if (parts.length == 1) {
-        repo = window.location.hostname
+        repo = window.location.hostname;
         resource = parts[0];
         d3.text("/" + resource + ".txt").then(doLine);
     } else {
@@ -273,6 +273,11 @@
         resource = parts[1];
         d3.text("/" + repo + "/" + resource + ".txt").then(doLine);
     }
+	
+	console.log("orgUser='" + orgUser + "'");
+	console.log("repo='" + repo + "'");
+	console.log("resource='" + resource + "'");
+	
     function doLine(root) {
         const t = new timeline(root);
         t.render();
