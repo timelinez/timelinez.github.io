@@ -12,7 +12,7 @@ Here's a reference timeline on JFK's presidency (sibling repo to this one):
 
 As mentioned, that repo is a sibling one inside the `timelinez` GitHub "organization". The intention is for multiple separate organizations to exist for various groups/agendas.
 
-One built in to this repo is on Sun/Oracle's patronage of Java (the programming language): 
+One built into this GitHub repo is about Sun/Oracle's patronage of Java (the programming language): 
 
 * Timeline visual: [timelinez.github.io](https://timelinez.github.io) 
 * Source for that: [github.com/timelinez/timelinez.github.io/blob/master/main.txt](http://github.com/timelinez/timelinez.github.io/blob/master/main.txt).
@@ -22,6 +22,16 @@ Here's an excerpt from the source for the JFK timeline:
 ```
 1963-11-22 – President Kennedy and Texas Governor John Connally are shot in Dallas, with President Kennedy dying from his injuries.
 ```
+
+## Why?
+
+We're in an age where opposing political forces have different accounts of what did or did not happen. A Merkle tree 
+[[↗]](https://en.wikipedia.org/wiki/Merkle_tree) with widely shared SHA1s is solid evidence one way or the other on the 
+account of events. Git is a very solid history retaining Merkle tree. GitHub (and equivalents) are very solid portals for 
+Git repo curation.
+
+Groups, organizations and individuals can keep their own public Gi-backed Merkle tree timelines to help reinforce their 
+account of events. Accounts of events that in a small way support democracy and honesty.  
 
 # What is the reason for the GitHub-backed aspect to this?
 
@@ -91,5 +101,5 @@ GitHub's Pull-Request system. Remember that you can have more than one .txt time
 
 # Small snafus
 
-1. PDFs in the repo being subject to shenanigans - ref https://shattered.io - you can't even put their SHA1s in the Git repo and keep the binary without someone claiming the possibility of fakery.
+1. PDFs in the repo being subject to shenanigans. Refer to [shattered.io](https://shattered.io). You can't even put their SHA1s in the Git repo and keep the binary without someone claiming the possibility of fakery.
 2. The Web's "Same Origin Policy" [[↗]](https://en.wikipedia.org/wiki/Same-origin_policy) means that you have to fork this repo, including the JavaScript code rather than to referto the HTTP hosted JavaScript/CSS. You then have to keep abreast by pulling changes from "upstream" as you also maintain divergence.
