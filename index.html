@@ -185,7 +185,7 @@
                     domain = d3.extent(this.timedata.map(d => d.date)),
                     x = this.base.node().getBoundingClientRect().left + 8,
                     y = d3.scaleTime()
-                        .range([0, this.height - 30])
+                        .range([0, this.height - 90])
                         .domain(domain)
                         .nice(d3.timeDay),
                     height = y(domain[1]) + 20,
