@@ -23,25 +23,44 @@ Here's an excerpt from the source for the JFK timeline:
 1963-11-22 – President Kennedy and Texas Governor John Connally are shot in Dallas, with President Kennedy dying from his injuries.
 ```
 
-## Why?
+# Why?
+
+## Merkle Trees and Git
 
 We're in an age where opposing political forces have different accounts of what did or did not happen. A Merkle tree 
 [[↗]](https://en.wikipedia.org/wiki/Merkle_tree) with widely shared SHA1s is solid evidence one way or the other on the 
 account of events. Git is a very solid history retaining Merkle tree. GitHub (and equivalents) are very solid portals for 
-Git repo curation.
+Git repo curation (see below).
 
-Groups, organizations and individuals can keep their own public Gi-backed Merkle tree timelines to help reinforce their 
+Groups, organizations and individuals can keep their own public Git-backed Merkle tree timelines to help reinforce their 
 account of events. Accounts of events that in a small way support democracy and honesty.  
 
-# What is the reason for the GitHub-backed aspect to this?
+Git is a nearly perfect history-retaining merkle tree. It can't take more than a few gigabytes of history, and it 
+doesn't really like binaries without add-ons (the fill that GB limit more quickly). Thus, we should aim to keep
+everything plain-ish text for this to work well.
 
-## Because Git is a nearly perfect history-retaining merkle tree. 
+# Why GitHub and GitHub Pages?
 
 Changes made to a timeline should be inspectable 
 by all and Git's history as presented by GitHub make that easy and polished. Not only that, timelines could receive
 contributions from anyone, including anonymous people, and subject to approval those contributions become accepted.
+
 Changes to a timeline (as anything held in Git) can't be modified after the event without that being evident in 
 the Git history. This is a useful feature of a system that wants position itself as canonical and trustworthy.
+
+As alluded to, GitHub has build-in features to make this easy.
+
+1. TextArea editing of textfiles through the web user interface. No need to be a programmer to change files within the hosted Git repos.
+2. GitHub has a "pages" facility that auto-deploys sites when changes are saved (commits).
+
+## Microsoft?
+
+Because you trust GitHub (Microsoft owns GitHub), you're trusting that:
+
+1. There was no tampering with the Git history itself (the SHA1s should make that evident anyway).
+2. There was no mis-representation of anything during the serving and visualization/navigation of the timeline in a browser, where the source is "open" in a public repo. This is applicable to timelines served on github.io domains with public repos (as mentioned).
+
+# A worked example 
 
 Say you were trying to maintain **the** canonical timeline for JFK's assassination, and wanted to represent that there was
 a "second shooter" on the grassy knoll in downtown Dallas. You could maintain your claims in a text file like so: 
@@ -66,11 +85,6 @@ The Git feature "force push" is how history can be destroyed, so turn that OFF i
 (protect the master branch). Also don't check in PDFs as researchers have proven SHA1 is not safe for PDFs [[↗]](http://shattered.io/) if someone has 
 sufficient funds to spend on computing power to make a second PDF have the same SHA1 of the first.
 
-## Because you trust GitHub (Microsoft)
-
-1. To not tamper with the Git history itself
-2. To not mis-represent anything during the serving and navigation of the timeline, despite some source being "open" (this repo)
-
 # Making your own timeline
 
 If you're interested in making your own timelines, take a look at 
@@ -84,7 +98,7 @@ around the same origin policy (see "snafus" below) works.
 Editing your timeline can be done through GitHub's web interface. You can process your own contributions using 
 GitHub's Pull-Request system. Remember that you can have more than one .txt timeline in the same repo, and each will have a strong URL of its own.
 
-# Features yet to add (contributions welcome)
+# Features yet to add (TODOs)
 
 1. Links to - other pages (should be markdown style)
 1. "Drill in" to other/adjacent timelines (like "see JFK death")
@@ -97,9 +111,11 @@ GitHub's Pull-Request system. Remember that you can have more than one .txt time
 1. Show similar date/time entries from smushing into each other
 1. InfiniScroll
 1. Zoom in / zoom out
-1. Arrowhead triangle is a little busted.
+1. Arrowhead triangle is a little distorted - oops.
+
+JavaScript, CSS and D3 experienced contributors needed. Pull-Requests welcome :)
 
 # Small snafus
 
-1. PDFs in the repo being subject to shenanigans. Refer to [shattered.io](https://shattered.io). You can't even put their SHA1s in the Git repo and keep the binary without someone claiming the possibility of fakery.
+1. PDFs in the repo being subject to shenanigans. Refer to [shattered.io](https://shattered.io). You can't even put the SHA1s for PDFs in the Git repo and keep the binary without someone claiming the possibility of fakery.
 2. The Web's "Same Origin Policy" [[↗]](https://en.wikipedia.org/wiki/Same-origin_policy) means that you have to fork this repo, including the JavaScript code rather than to referto the HTTP hosted JavaScript/CSS. You then have to keep abreast by pulling changes from "upstream" as you also maintain divergence.
