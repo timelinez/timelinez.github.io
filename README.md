@@ -10,7 +10,7 @@ Here's a reference timeline on JFK's presidency (sibling repo to this one):
 * The source for that is in this repo: [github.com/timelinez/jfk](https://github.com/timelinez/jfk) 
 * The main timeline file in that repo is [github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) (editable in situ).
 
-As mentioned, that repo is a sibling one inside the `timelinez` "organization". The intention is for multiple separate organizations to exist for various groups/agendas.
+As mentioned, that repo is a sibling one inside the `timelinez` GitHub "organization". The intention is for multiple separate organizations to exist for various groups/agendas.
 
 One built in to this repo is on Sun/Oracle's patronage of Java (the programming language): 
 
@@ -64,9 +64,9 @@ sufficient funds to spend on computing power to make a second PDF have the same 
 # Making your own timeline
 
 If you're interested in making your own timelines, take a look at 
-[https://github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar in a new repo for your GitHub org or user. Don't 
-use for for that as you're not going to keep abreast of the small amount of JFK data - your's will not just be wholly divergent, it won't have 
-any common history.
+[github.com/timelinez/jfk](https://github.com/timelinez/jfk) and make something similar in a new repo for your GitHub org (or user). Don't 
+use "fork" for that as you're not going to keep abreast of the small amount of JFK data - your's will not just be wholly divergent, it won't have 
+any common history at all.
 
 Fork this repo too and maintain divergence with it. It should be forked into a "&lt;orgOrUserName&gt;.github.io" repo name, so that technology 
 around the same origin policy works.
