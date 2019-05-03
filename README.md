@@ -1,8 +1,8 @@
 # What is this?
 
 A JavaScript technology that uses [D3](https://d3js.org/) to make a timeline from a simple text file.  The timeline code is maintained in 
-this repository ([github.com/timelinez/timelinez.github.io/](https://github.com/timelinez/timelinez.github.io/)) on Github who kindly serve it up for web access  
-on [timelinez.github.io](https://timelinez.github.io). It plucks a Github organization (or user) out of the domain, and the repo-name out of the anchor of the URL (if present - the bit to the right ot the '#') to extract data for a visual timeline. 
+this repository ([github.com/timelinez/timelinez.github.io/](https://github.com/timelinez/timelinez.github.io/)) on GitHub who kindly serve it up for web access  
+on [timelinez.github.io](https://timelinez.github.io). It plucks a GitHub organization (or user) out of the domain, and the repo-name out of the anchor of the URL (if present - the bit to the right ot the '#') to extract data for a visual timeline. 
 
 Here's a reference timeline on JFK's presidency (sibling repo to this one): 
 
@@ -23,7 +23,7 @@ Here's an excerpt from the source for the JFK timeline:
 1963-11-22 – President Kennedy and Texas Governor John Connally are shot in Dallas, with President Kennedy dying from his injuries.
 ```
 
-# What is the reason for the Github-backed aspect to this?
+# What is the reason for the GitHub-backed aspect to this?
 
 ## Because Git is a nearly perfect history-retaining merkle tree. 
 
@@ -52,11 +52,11 @@ in fact Lee Harvey Oswald [[↗]](https://en.wikipedia.org/wiki/Lee_Harvey_Oswal
 was noted, so you should simply make the change to the latest version of the timeline and not the correction in the 
 commit message, making it non-controversial. This would be similar to retractions in newspapers.
 
-The Git feature "force push" is how history can be destroyed, so turn that OFF in the Github (or GitLab) project definition 
+The Git feature "force push" is how history can be destroyed, so turn that OFF in the GitHub (or GitLab) project definition 
 (protect the master branch). Also don't check in PDFs as researchers have proven SHA1 is not safe for PDFs [[↗]](http://shattered.io/) if someone has 
 sufficient funds to spend on computing power to make a second PDF have the same SHA1 of the first.
 
-## Because you trust Github (Microsoft)
+## Because you trust GitHub (Microsoft)
 
 1. To not tamper with the Git history itself
 2. To not mis-represent anything during the serving and navigation of the timeline, despite some source being "open" (this repo)
@@ -71,7 +71,7 @@ any common history at all.
 Fork this repo too and maintain divergence with it. It should be forked into a "&lt;orgOrUserName&gt;.github.io" repo name, so that technology 
 around the same origin policy works.
 
-Editing your timeline can be done through Github's web interface. You can process your own contributions using 
+Editing your timeline can be done through GitHub's web interface. You can process your own contributions using 
 GitHub's Pull-Request system. Remember that you can have more than one .txt timeline in the same repo, and each will have a strong URL of its own.
 
 # Features yet to add (contributions welcome)
