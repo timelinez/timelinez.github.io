@@ -256,7 +256,7 @@
     // https://orgUser.github.io#resource - should load '<resource>.txt' on the same domain
     // https://orgUser.github.io#repoName/resource - should load '<resource>.txt' from the <repoName> root directory on the same domain
 
-    let parts = location.hash.repace("#", "").split("/");
+    let parts = location.hash.replace("#", "").split("/");
 	
 	let orgUser = window.location.hostname.split(".")[0];
 
