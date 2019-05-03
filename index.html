@@ -262,12 +262,12 @@
 
     if (parts.length < 1) {
         repo = window.location.hostname;
-        resource = "/main";
-        d3.text(resource + ".txt").then(doLine);
-    } else if (parts.length == 1) {
-        repo = window.location.hostname;
-        resource = parts[0];
+        resource = "main";
         d3.text("/" + resource + ".txt").then(doLine);
+    } else if (parts.length == 1) {
+        repo = parts[0];
+        resource = "main";
+        d3.text("/" + repo + "/" + resource + ".txt").then(doLine);
     } else {
         repo = parts[0].replace("#","");
         resource = parts[1];
