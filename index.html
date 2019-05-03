@@ -252,17 +252,17 @@
 
 <script>
 
-    // https://orgUser.github.io - should load 'index.txt' on the same domain
+    // https://orgUser.github.io - should load 'main.txt' on the same domain
     // https://orgUser.github.io#resource - should load '<resource>.txt' on the same domain
     // https://orgUser.github.io#repoName/resource - should load '<resource>.txt' from the <repoName> root directory on the same domain
 
-    let parts = location.hash.split("/");
+    let parts = location.hash.repace("#", "").split("/");
 	
 	let orgUser = window.location.hostname.split(".")[0];
 
     if (parts.length < 1) {
         repo = window.location.hostname;
-        resource = "/index";
+        resource = "/main";
         d3.text(resource + ".txt").then(doLine);
     } else if (parts.length == 1) {
         repo = window.location.hostname;
