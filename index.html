@@ -258,11 +258,11 @@
 	
 	let orgUser = window.location.hostname.split(".")[0];
 
-    if (parts.length < 1) {
+    if (parts.length < 1 || (parts.length == 1 && parts[0] === "") ) {
         repo = window.location.hostname;
         resource = "main";
         d3.text("/" + resource + ".txt").then(doLine);
-    } else if (parts.length == 1) {
+    } else if (parts.length === 1) {
         repo = parts[0];
         resource = "main";
         d3.text("/" + repo + "/" + resource + ".txt").then(doLine);
