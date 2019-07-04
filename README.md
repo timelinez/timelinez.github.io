@@ -6,7 +6,9 @@ on [timelinez.github.io](https://timelinez.github.io). It plucks a GitHub organi
 
 Here's a reference timeline on JFK's presidency (sibling repo to this one): 
 
-* As you you would view it: [timelinez.github.io#jfk](https://timelinez.github.io#timelinez/jfk) (using this technology). 
+https://timelinez.github.io/#jfk/main
+
+* As you you would view it: [timelinez.github.io#jfk/main](https://timelinez.github.io#/jfk/main) (using this technology). 
 * The source for that is in this repo: [github.com/timelinez/jfk](https://github.com/timelinez/jfk) 
 * The main timeline file in that repo is [github.com/timelinez/jfk/blob/master/main.txt](https://github.com/timelinez/jfk/blob/master/main.txt) (editable in situ).
 
